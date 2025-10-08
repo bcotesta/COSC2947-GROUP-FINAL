@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">
     <ClCompile>
-      <AdditionalIncludeDirectories>&quot;D:\C++ Programming\COSC2947-GROUP-FINAL\GSBS\x64\Debug\qt\qmake&quot;;D:\Qt\6.9.3\msvc2022_64\include;D:\Qt\6.9.3\msvc2022_64\include\QtGui;D:\Qt\6.9.3\msvc2022_64\include\QtCore;&quot;D:\C++ Programming\COSC2947-GROUP-FINAL\GSBS\x64\Debug\qt\qmake&quot;;/include;D:\Qt\6.9.3\msvc2022_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>&quot;D:\C++ Programming\COSC2947-GROUP-FINAL\source\GSBS\x64\Debug\qt\qmake&quot;;D:\Qt\6.9.3\msvc2022_64\include;D:\Qt\6.9.3\msvc2022_64\include\QtGui;D:\Qt\6.9.3\msvc2022_64\include\QtCore;&quot;D:\C++ Programming\COSC2947-GROUP-FINAL\source\GSBS\x64\Debug\qt\qmake&quot;;/include;D:\Qt\6.9.3\msvc2022_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>.\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
