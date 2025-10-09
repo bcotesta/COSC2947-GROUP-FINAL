@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\User.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:User.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Card.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:Card.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Card.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:Card.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Customer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:Customer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Account.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:Account.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Account.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:Account.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Transaction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:Transaction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Transaction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -13,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Transaction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:Transaction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,19 +51,82 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Account.h",
-              "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Account.h",
-              "RelativeDocumentMoniker": "Account.h",
-              "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Account.h",
-              "RelativeToolTip": "Account.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
+              "Title": "User.h",
+              "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\User.h",
+              "RelativeDocumentMoniker": "User.h",
+              "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\User.h",
+              "RelativeToolTip": "User.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-09T00:06:52.069Z",
+              "WhenOpened": "2025-10-09T01:13:01.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Card.cpp",
+              "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Card.cpp",
+              "RelativeDocumentMoniker": "Card.cpp",
+              "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Card.cpp",
+              "RelativeToolTip": "Card.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-09T00:46:00.251Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Card.h",
+              "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Card.h",
+              "RelativeDocumentMoniker": "Card.h",
+              "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Card.h",
+              "RelativeToolTip": "Card.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-09T00:40:17.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Customer.h",
+              "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Customer.h",
+              "RelativeDocumentMoniker": "Customer.h",
+              "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Customer.h",
+              "RelativeToolTip": "Customer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-09T00:39:09.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Account.cpp",
+              "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Account.cpp",
+              "RelativeDocumentMoniker": "Account.cpp",
+              "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Account.cpp",
+              "RelativeToolTip": "Account.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-09T00:18:29.663Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Account.h",
+              "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Account.h",
+              "RelativeDocumentMoniker": "Account.h",
+              "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Account.h",
+              "RelativeToolTip": "Account.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAiwA4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-09T00:06:52.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Transaction.h",
               "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Transaction.h",
               "RelativeDocumentMoniker": "Transaction.h",
@@ -51,24 +134,23 @@
               "RelativeToolTip": "Transaction.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-07T00:40:35.764Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-07T00:40:35.764Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Transaction.cpp",
               "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Transaction.cpp",
               "RelativeDocumentMoniker": "Transaction.cpp",
               "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Transaction.cpp",
               "RelativeToolTip": "Transaction.cpp",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACEAAABTAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-07T00:42:47.58Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "main.cpp",
               "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
@@ -76,8 +158,7 @@
               "RelativeToolTip": "main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-07T00:26:52.181Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-07T00:26:52.181Z"
             }
           ]
         },
