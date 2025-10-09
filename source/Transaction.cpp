@@ -7,6 +7,7 @@ using namespace std;
 Transaction::Transaction(int id, DateTime date, double amount, TransactionType type, string description)
 {
 	// Initialize member variables
+	// Eventually this data will be pulled from a database.
 	this->id_ = id;
 	this->date_ = date;
 	this->amount_ = amount;

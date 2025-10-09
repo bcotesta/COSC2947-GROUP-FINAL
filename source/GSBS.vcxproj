@@ -92,11 +92,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Account.cpp" />
+    <ClCompile Include="Card.cpp" />
+    <ClCompile Include="Customer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Transaction.cpp" />
     <ClCompile Include="Types.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Account.h" />
+    <ClInclude Include="Card.h" />
+    <ClInclude Include="Customer.h" />
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="Types.h" />
   </ItemGroup>
