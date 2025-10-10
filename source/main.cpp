@@ -1,16 +1,37 @@
+// Brandon Coesta 10/10/2025
+
 #include "Account.h"
 #include "Customer.h"
 #include "Card.h"
+#include "User.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
 int main()
 {
-	cout << "-- GREATER SUDBURY BANKING SERVICE --" << endl;
 	string currentInput;
-	Account currentAccount("123456789", AccountType::CHEQUING);
-	currentAccount.deposit(1000.0); // Initial deposit for demonstration
+
+	// Dummy user and account for demonstration purposes
+	// We will eventually pull this from a database
+	User currentUser(1,"John Doe", "jd@gmail.com", "reallygoodpassword123", "705-671-7171");
+	Customer currentCustomer(1);
+	currentCustomer.setUser(currentUser);
+	Account currentAccount("123456789", AccountType::CHEQUING);  // Changed to CHECKING
+	currentCustomer.addAccount(currentAccount);
+
+	cout << "-- GREATER SUDBURY BANKING SERVICE --" << endl;
+	// display user information
+	cout << "Welcome, " << currentUser.name() << "!" << endl;
+	
+	// show accounts - Fixed version
+	auto accountsList = currentCustomer.accounts();
+	int accountNum = 1;
+	for (const auto& account : accountsList) {
+		cout << "Account " << accountNum << ": " << account.accountNumber() << endl;
+		accountNum++;
+	}
+
 	bool running = true;
 	while(running)
 	{
@@ -23,6 +44,7 @@ int main()
 			cout << " view balance - Show selected account balance" << endl;
 			cout << " deposit - Deposit funds into selected account" << endl;
 			cout << " withdraw - Withdraw funds from selected account" << endl;
+			cout << " transfer - Transfer funds between accounts" << endl;
 			cout << " exit - Exit the application" << endl;
 			// Add more commands as needed
 		}
@@ -38,15 +60,14 @@ int main()
 		}
 		else if (currentInput == "deposit") {
 			cout << "How much would you like to deposit? ";
-			int amnt = 0;
+			double amnt = 0;  // Changed from int to double
 			cin >> amnt;
 			currentAccount.deposit(amnt);
 		}
 		else if (currentInput == "withdraw")
 		{
-			// Placeholder for withdrawal logic
 			cout << "How much would you like to withdraw? ";
-			int amnt = 0;
+			double amnt = 0;  // Changed from int to double
 			cin >> amnt;
 			currentAccount.withdraw(amnt);
 		}

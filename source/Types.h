@@ -1,4 +1,3 @@
-#pragma once
 // Types.h
 #pragma once
 #include <string>

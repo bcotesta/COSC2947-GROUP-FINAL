@@ -3,7 +3,8 @@
 
 #include <iostream>
 
-User::User(int id, string n, string e, string p, string ph): userId_(id), name_(n), email_(e), phone_(ph)
+User::User(int id, string n, string e, string p, string ph): 
+	userId_(id), name_(n), email_(e), phone_(ph)
 {
 	// create user
 }

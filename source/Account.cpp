@@ -1,6 +1,7 @@
 // Brandon Cotesta 10/08/2025
 
 #include "Account.h"
+#include "Transaction.h" 
 #include <iostream>
 #include <string>
 #include <chrono>
@@ -28,7 +29,9 @@ void Account::deposit(double amount)
     }
     balance_ += amount;
 
-    int newId = static_cast<int>(transactionHistory_.size()) + 1;
+    // Use a more robust ID generation
+    static int nextId = 1;
+    int newId = nextId++;
     DateTime now = std::chrono::system_clock::now();
     Transaction depositTransaction(newId, now, amount, TransactionType::DEPOSIT, "Deposit - " + to_string(newId));
     transactionHistory_.push_back(depositTransaction);
@@ -50,7 +53,9 @@ void Account::withdraw(double amount)
     }
     balance_ -= amount;
 
-    int newId = static_cast<int>(transactionHistory_.size()) + 1;
+    // Use a more robust ID generation
+    static int nextId = 1;
+    int newId = nextId++;
     DateTime now = std::chrono::system_clock::now();
     Transaction withdrawalTransaction(newId, now, amount, TransactionType::WITHDRAWAL, "Withdrawal - " + to_string(newId));
     transactionHistory_.push_back(withdrawalTransaction);
