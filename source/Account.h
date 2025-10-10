@@ -1,23 +1,29 @@
 #pragma once
 #include "Types.h"
-#include <Transaction.cpp>
+#include "Transaction.h"
 #include <string>
 #include <list>
+
 class Account
 {
 public:
-	Account(string accountNumber, AccountType accType);
-	string accountNumber() const;
-	AccountType accountType() const;
-	list<Transaction> transactionHistory() const;
-	// functions
-	void deposit(double amount);
-	void withdraw(double amount);
-	double getBalance();
+    Account(std::string accountNumber, AccountType accType);
+
+    const std::string& accountNumber() const;
+    AccountType accountType() const;
+
+    // Expose references if external code must inspect/append history
+    std::list<Transaction>& transactionHistory();
+    const std::list<Transaction>& transactionHistory() const;
+
+    void deposit(double amount);
+    void withdraw(double amount);
+    double getBalance() const;
+
 private:
-	string accountNumber_;
-	AccountType accountType_;
-	list<Transaction> transactionHistory_;
-	double balance_;
+    std::string accountNumber_;
+    AccountType accountType_;
+    std::list<Transaction> transactionHistory_;
+    double balance_{0.0};
 };
 

@@ -1,8 +1,11 @@
 ﻿   Qt/MSBuild: 3.4.1.0
   Reading Qt configuration (D:/Qt/6.9.3/msvc2022_64/bin/qmake)
    Qt: 6.9.3
+  Account.cpp
+  Card.cpp
+  Customer.cpp
   main.cpp
   Transaction.cpp
   Types.cpp
-D:\C++ Programming\COSC2947-GROUP-FINAL\source\Transaction.cpp(27,2): error C2065: 'cout': undeclared identifier
-D:\C++ Programming\COSC2947-GROUP-FINAL\source\Transaction.cpp(27,77): error C2065: 'endl': undeclared identifier
+  User.cpp
+  GSBS.vcxproj -> D:\C++ Programming\COSC2947-GROUP-FINAL\source\x64\Debug\GSBS.exe
