@@ -36,6 +36,31 @@ void generateMiniStatement(const Account& account) {
 	cout << "----------------------------------------" << endl;
 }
 
+string switchAccount(Customer& customer) {
+	auto accountsList = customer.accounts();
+	if (accountsList.empty()) {
+		cout << "No accounts available." << endl;
+		return "";
+	}
+	cout << "Select an account:" << endl;
+	int accountNum = 1;
+	for (const auto& account : accountsList) {
+		cout << accountNum << ". " << account.accountNumber() << endl;
+		accountNum++;
+	}
+	int choice = 0;
+	cout << "Enter the number of the account to select: ";
+	cin >> choice;
+	if (choice < 1 || choice >= accountNum) {
+		cout << "Invalid selection." << endl;
+		return "";
+	}
+	auto it = accountsList.begin();
+	advance(it, choice - 1);
+	cout << "Switched to account: " << it->accountNumber() << endl;
+	return it->accountNumber();
+}
+
 int main()
 {
 	string currentInput;
@@ -75,6 +100,7 @@ int main()
 			cout << " deposit - Deposit funds into selected account" << endl;
 			cout << " withdraw - Withdraw funds from selected account" << endl;
 			cout << " transfer - Transfer funds between accounts" << endl;
+			cout << " new account - Open a new account" << endl;
 			cout << " mini statement - Generate a mini statement for selected account" << endl;
 			cout << " exit - Exit the application" << endl;
 			// Add more commands as needed
@@ -121,6 +147,26 @@ int main()
 			for (const auto& transaction : currentAccount.transactionHistory()) {
 				cout << transaction.date() << " - " << (transaction.type() == TransactionType::DEPOSIT ? "Deposit" : "Withdrawal")
 					 << ": $" << transaction.amount() << endl;
+			}
+		}
+		else if (currentInput == "new account")
+		{
+			// Placeholder for opening a new account
+			cout << "Feature not implemented yet." << endl;
+		}
+		else if (currentInput == "switch account")
+		{
+			string selectedAccountNumber = switchAccount(currentCustomer);
+			if (!selectedAccountNumber.empty()) {
+				// Find the account in the customer's accounts
+				auto accountsList = currentCustomer.accounts();
+				auto it = find_if(accountsList.begin(), accountsList.end(),
+					[&selectedAccountNumber](const Account& account) {
+						return account.accountNumber() == selectedAccountNumber;
+					});
+				if (it != accountsList.end()) {
+					currentAccount = *it;
+				}
 			}
 		}
 		else if (currentInput == "mini statement")

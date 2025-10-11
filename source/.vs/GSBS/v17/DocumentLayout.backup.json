@@ -66,9 +66,9 @@
               "Title": "main.cpp",
               "DocumentMoniker": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\main.cpp*",
-              "RelativeToolTip": "main.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
+              "ToolTip": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAACEAAAAAAAAAAAAiwCYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-07T00:26:52.181Z",
               "EditorCaption": ""
@@ -210,8 +210,7 @@
               "RelativeToolTip": "Transaction.cpp",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-07T00:42:47.58Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-07T00:42:47.58Z"
             }
           ]
         }
