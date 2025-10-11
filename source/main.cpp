@@ -42,6 +42,8 @@ int main()
 			cout << "Available commands:" << endl;
 			cout << " help - Show this help message" << endl;
 			cout << " view balance - Show selected account balance" << endl;
+			cout << " view accounts - List all your accounts" << endl;
+			cout << " view transactions - Show recent transactions for selected account" << endl;
 			cout << " deposit - Deposit funds into selected account" << endl;
 			cout << " withdraw - Withdraw funds from selected account" << endl;
 			cout << " transfer - Transfer funds between accounts" << endl;
@@ -74,6 +76,23 @@ int main()
 		else if (currentInput == "transfer funds")
 		{
 			// Placeholder for transferring funds}
+		}
+		else if (currentInput == "view accounts")
+		{
+			auto accountsList = currentCustomer.accounts();
+			int accountNum = 1;
+			for (const auto& account : accountsList) {
+				cout << "Account " << accountNum << ": " << account.accountNumber() << endl;
+				accountNum++;
+			}
+		}
+		else if (currentInput == "view transactions")
+		{
+			cout << "Recent transactions for account " << currentAccount.accountNumber() << ":" << endl;
+			for (const auto& transaction : currentAccount.transactionHistory()) {
+				cout << transaction.date() << " - " << (transaction.type() == TransactionType::DEPOSIT ? "Deposit" : "Withdrawal")
+					 << ": $" << transaction.amount() << endl;
+			}
 		}
 		else
 		{

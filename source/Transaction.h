@@ -11,9 +11,9 @@ public:
 	Transaction(int id, DateTime date, double amount, TransactionType type, string description);
 
 	int id() const;
-	DateTime date() const;
 	double amount() const;
 	TransactionType type() const;
+	string date() const;
 	string description() const;
 
 	// processing and rollback would interact with accounts and database

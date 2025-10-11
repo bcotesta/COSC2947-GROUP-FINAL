@@ -10,4 +10,3 @@ enum class InvestmentType { STOCK, ETF, CRYPTO, GIC, MUTUAL_FUND };
 enum class RequestStatus { OPEN, PENDING, CLOSED };
 
 using DateTime = std::chrono::system_clock::time_point;
-

@@ -2,6 +2,9 @@
 
 #include "Transaction.h"
 #include <iostream>
+#include <iomanip>
+#include <chrono>
+#include <sstream>
 using namespace std;
 
 Transaction::Transaction(int id, DateTime date, double amount, TransactionType type, string description)
@@ -17,7 +20,15 @@ Transaction::Transaction(int id, DateTime date, double amount, TransactionType t
 
 // Getters
 int Transaction::id() const { return id_; }
-DateTime Transaction::date() const { return date_; }
+string Transaction::date() const { 
+    auto time_t = std::chrono::system_clock::to_time_t(date_);
+    std::tm tm;
+    localtime_s(&tm, &time_t);
+    
+    std::ostringstream oss;
+    oss << std::put_time(&tm, "%Y-%m-%d %H:%M:%S");
+    return oss.str();
+}
 double Transaction::amount() const { return amount_; }
 TransactionType Transaction::type() const { return type_; }
 string Transaction::description() const { return description_; }
