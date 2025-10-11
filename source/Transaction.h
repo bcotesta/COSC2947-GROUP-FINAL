@@ -14,6 +14,7 @@ public:
 	double amount() const;
 	TransactionType type() const;
 	string date() const;
+	DateTime rawDate() const;
 	string description() const;
 
 	// processing and rollback would interact with accounts and database

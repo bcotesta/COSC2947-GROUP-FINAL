@@ -20,6 +20,7 @@ Transaction::Transaction(int id, DateTime date, double amount, TransactionType t
 
 // Getters
 int Transaction::id() const { return id_; }
+DateTime Transaction::rawDate() const { return date_; }
 string Transaction::date() const { 
     auto time_t = std::chrono::system_clock::to_time_t(date_);
     std::tm tm;

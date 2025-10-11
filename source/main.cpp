@@ -6,8 +6,36 @@
 #include "User.h"
 #include <iostream>
 #include <string>
+#include <chrono>
 
 using namespace std;
+// in the future this will generate a PDF or other file format
+// it will also get all this data from a database
+// the time period will also be variable
+void generateMiniStatement(const Account& account) {
+	cout << "Mini Statement for Account: " << account.accountNumber() << endl;
+	cout << "----------------------------------------" << endl;
+	cout << "Date\t\t\tType\tAmount\tDescription" << endl;
+	cout << "----------------------------------------" << endl;
+	
+	// Get current time and calculate 4 weeks ago
+	auto now = std::chrono::system_clock::now();
+	auto fourWeeksAgo = now - std::chrono::hours(24 * 28); // 28 days = 4 weeks
+	
+	for (const auto& transaction : account.transactionHistory()) {
+		// Check if transaction date is within the last 4 weeks
+		if(transaction.rawDate() >= fourWeeksAgo && transaction.rawDate() <= now) {
+			cout << transaction.date() << "\t"
+				 << (transaction.type() == TransactionType::DEPOSIT ? "Deposit" : "Withdrawal") << "\t"
+				 << "$" << transaction.amount() << "\t"
+				 << transaction.description() << endl;
+		}
+	}
+	cout << "----------------------------------------" << endl;
+	cout << "Current Balance: $" << account.getBalance() << endl;
+	cout << "----------------------------------------" << endl;
+}
+
 int main()
 {
 	string currentInput;
@@ -47,6 +75,7 @@ int main()
 			cout << " deposit - Deposit funds into selected account" << endl;
 			cout << " withdraw - Withdraw funds from selected account" << endl;
 			cout << " transfer - Transfer funds between accounts" << endl;
+			cout << " mini statement - Generate a mini statement for selected account" << endl;
 			cout << " exit - Exit the application" << endl;
 			// Add more commands as needed
 		}
@@ -93,6 +122,10 @@ int main()
 				cout << transaction.date() << " - " << (transaction.type() == TransactionType::DEPOSIT ? "Deposit" : "Withdrawal")
 					 << ": $" << transaction.amount() << endl;
 			}
+		}
+		else if (currentInput == "mini statement")
+		{
+			generateMiniStatement(currentAccount);
 		}
 		else
 		{
