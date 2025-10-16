@@ -44,6 +44,12 @@
     <ClCompile Include="Authenticator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BankingWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Types.h">
@@ -72,8 +78,8 @@
     <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="main.cpp">
-      <Filter>Source Files</Filter>
+    <QtMoc Include="BankingWindow.h">
+      <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
 </Project>
