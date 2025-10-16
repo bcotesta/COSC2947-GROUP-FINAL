@@ -105,6 +105,7 @@ StyleCopReport.xml
 *.pch
 *.pdb
 *.ipdb
+*.ipch
 *.pgc
 *.pgd
 *.rsp
@@ -419,6 +420,7 @@ FodyWeavers.xsd
 
 # Built Visual Studio Code Extensions
 *.vsix
+*.vsidx
 
 # Windows Installer files from build outputs
 *.cab
