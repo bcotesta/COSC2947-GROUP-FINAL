@@ -76,7 +76,7 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAMUAAAAAAAAAAADgv9kAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANoBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-07T00:26:52.181Z",
               "EditorCaption": ""
@@ -122,8 +122,7 @@
               "RelativeToolTip": "Authenticator.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-16T02:45:54.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-16T02:45:54.644Z"
             },
             {
               "$type": "Document",
@@ -135,8 +134,7 @@
               "RelativeToolTip": "Types.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-10T18:36:31.355Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-10T18:36:31.355Z"
             },
             {
               "$type": "Document",
@@ -208,8 +206,7 @@
               "RelativeToolTip": "Account.cpp",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-09T00:18:29.663Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-09T00:18:29.663Z"
             },
             {
               "$type": "Document",
@@ -233,8 +230,7 @@
               "RelativeToolTip": "Transaction.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-07T00:40:35.764Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-07T00:40:35.764Z"
             },
             {
               "$type": "Document",
