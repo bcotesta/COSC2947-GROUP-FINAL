@@ -4,9 +4,14 @@
 #include "Customer.h"
 #include "Card.h"
 #include "User.h"
+#include "Authenticator.h"
 #include <iostream>
 #include <string>
 #include <chrono>
+// Qt includes
+#include <QApplication>
+#include <QPushButton>
+#include <QLineEdit>
 
 using namespace std;
 // in the future this will generate a PDF or other file format
@@ -61,13 +66,12 @@ string switchAccount(Customer& customer) {
 	return it->accountNumber();
 }
 
-int main()
-{
+void consoleAppLogic() {
 	string currentInput;
 
 	// Dummy user and account for demonstration purposes
 	// We will eventually pull this from a database
-	User currentUser(1,"John Doe", "jd@gmail.com", "reallygoodpassword123", "705-671-7171");
+	User currentUser(1, "John Doe", "jd@gmail.com", "reallygoodpassword123", "705-671-7171");
 	Customer currentCustomer(1);
 	currentCustomer.setUser(currentUser);
 	Account currentAccount("123456789", AccountType::CHEQUING);  // Changed to CHECKING
@@ -76,7 +80,7 @@ int main()
 	cout << "-- GREATER SUDBURY BANKING SERVICE --" << endl;
 	// display user information
 	cout << "Welcome, " << currentUser.name() << "!" << endl;
-	
+
 	// show accounts - Fixed version
 	auto accountsList = currentCustomer.accounts();
 	int accountNum = 1;
@@ -86,11 +90,11 @@ int main()
 	}
 
 	bool running = true;
-	while(running)
+	while (running)
 	{
 		cout << "Enter command (help for list of commands): ";
 		getline(cin >> ws, currentInput);
-		if(currentInput == "help")
+		if (currentInput == "help")
 		{
 			cout << "Available commands:" << endl;
 			cout << " help - Show this help message" << endl;
@@ -105,12 +109,12 @@ int main()
 			cout << " exit - Exit the application" << endl;
 			// Add more commands as needed
 		}
-		else if(currentInput == "exit")
+		else if (currentInput == "exit")
 		{
 			running = false;
 			cout << "Exiting the application. Goodbye!" << endl;
 		}
-		else if(currentInput == "view balance")
+		else if (currentInput == "view balance")
 		{
 			// Placeholder for viewing balance logic
 			cout << "Account balance: $" << currentAccount.getBalance() << endl;
@@ -146,7 +150,7 @@ int main()
 			cout << "Recent transactions for account " << currentAccount.accountNumber() << ":" << endl;
 			for (const auto& transaction : currentAccount.transactionHistory()) {
 				cout << transaction.date() << " - " << (transaction.type() == TransactionType::DEPOSIT ? "Deposit" : "Withdrawal")
-					 << ": $" << transaction.amount() << endl;
+					<< ": $" << transaction.amount() << endl;
 			}
 		}
 		else if (currentInput == "new account")
@@ -179,6 +183,51 @@ int main()
 			cout << "Type 'help' for a list of available commands." << endl;
 		}
 	}
+}
 
-	return 0;
+int main(int argc, char *argv[])
+{
+	// Authenticator test
+	Authenticator auth;
+
+	QApplication app(argc, argv);
+	// Window
+	QWidget window;
+	window.resize(320, 240);
+	window.setWindowTitle("Greater Sudbury Banking Service");
+	window.show();
+	// Username and Password fields
+	QLineEdit* usernameField = new QLineEdit(&window);
+	usernameField->setPlaceholderText(
+		QApplication::translate("childwidget", "Username"));
+	usernameField->setGeometry(50, 50, 220, 30);
+	usernameField->show();
+
+	QLineEdit* passwordField = new QLineEdit(&window);
+	passwordField->setPlaceholderText(
+		QApplication::translate("childwidget", "Password"));
+	passwordField->setEchoMode(QLineEdit::Password);
+	passwordField->setGeometry(50, 100, 220, 30);
+	passwordField->show();
+
+	// Example button
+	QPushButton *button = new QPushButton(
+		QApplication::translate("childwidget", "Login"), &window);
+	QObject::connect(button, &QPushButton::clicked, [&auth, usernameField, passwordField]() {
+		QString Qusername = usernameField->text();
+		QString Qpassword = passwordField->text();
+		string uname = Qusername.toStdString();
+		string pword = Qpassword.toStdString();
+		if(auth.verifyCredentials(uname, pword)){
+			consoleAppLogic();
+		}
+		else {
+			cout << "Invalid credentials." << endl;
+		}
+	});
+	button->setGeometry(110, 150, 100, 30);
+
+	button->show();
+
+	return app.exec();
 }

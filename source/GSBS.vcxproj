@@ -37,7 +37,7 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>6.9.3_msvc2022_64</QtInstall>
-    <QtModules>core;gui</QtModules>
+    <QtModules>core;gui;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
@@ -93,6 +93,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
+    <ClCompile Include="Authenticator.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="Customer.cpp" />
     <ClCompile Include="main.cpp" />
@@ -102,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="Authenticator.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="Customer.h" />
     <ClInclude Include="Transaction.h" />

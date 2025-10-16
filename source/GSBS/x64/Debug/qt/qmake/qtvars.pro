@@ -1,2 +1,2 @@
 CONFIG += no_fixpath
-QT = core gui
+QT = core gui widgets

@@ -21,7 +21,6 @@ public:
 	void process();
 	void rollback();
 private:
-	// Member variables
 	int id_;					// Unique transaction ID
 	DateTime date_;				// Date and time of the transaction
 	double amount_;				// Transaction amount
