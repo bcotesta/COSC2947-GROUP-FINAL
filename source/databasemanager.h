@@ -2,7 +2,6 @@
 // REFACTOR Brandon Cotesta 10/20/2025
 
 #include <iostream>
-#include <mysqlx/xdevapi.h>
 #include <mysql/jdbc.h>
 #include <jdbc/mysql_driver.h>
 #include <jdbc/mysql_connection.h>
@@ -12,12 +11,12 @@
 
 using std::string;
 using namespace std;
-using namespace ::mysqlx;
 
 class databasemanager
 {
 public:
 	databasemanager(); //connect to database
+	~databasemanager();
 
 //functions
 	void addtoTable(std::string tab, std::string val);

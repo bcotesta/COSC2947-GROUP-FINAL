@@ -5,24 +5,17 @@
 
 databasemanager::databasemanager()
 {
-    //establish connection 
     sql::mysql::MySQL_Driver* driver;
-    sql::Connection* con;
     stmt = nullptr;
     connection = nullptr;
 
     try {
         driver = sql::mysql::get_driver_instance();
-        con = driver->connect("tcp://127.0.0.1:3306", "root", "keypick1");
-        // connect to driver instance
-
-        con->setSchema("bankdatabase");
-        //Database that holds all tables
-        
-        stmt = con->createStatement();
-        connection = con; // Store connection for later use
+        connection = driver->connect("tcp://127.0.0.1:3306", "root", "keypick1");
+        connection->setSchema("bankdatabase");
+        stmt = connection->createStatement();
     }
-    catch (sql::SQLException& e) { //catch for errors
+    catch (sql::SQLException& e) {
         std::cerr << "SQL Error: " << e.what() << std::endl;
     }
 }
@@ -88,4 +81,16 @@ void databasemanager::updateTable(std::string tab, std::string setv, std::string
     stmt->execute(statement);
     //Executes statement - use execute() for UPDATE statements
     //no return needed
+}
+
+databasemanager::~databasemanager()
+{
+    if (stmt) {
+        delete stmt;
+        stmt = nullptr;
+    }
+    if (connection) {
+        delete connection;
+        connection = nullptr;
+    }
 }
