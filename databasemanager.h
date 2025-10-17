@@ -22,18 +22,18 @@ public:
 
 
 //functions
-  void addtoTable(string t, string v);
+  void addtoTable(string tab, string val);
   // (t) table to add a row to, (v) values to insert in ('value1','value2') format 
   // or "('"+ name + "', '" + email + "')" format with variables
 
-  string getValue(string c, string t); 
+  string retString(string col, string tab, string specval); 
   // select statement without where statement
   
-  string getValueW(string c, string t, string v); 
+  string retStringW(string col, string tab, string val, string specval); 
   // (c)column/s to select, (t)table to select from, (v)value to select if using where 
   // ex select + c + from + t + where + v + ";";
 
-  void updateTable(string t, string setv + strin cond);
+  void updateTable(string tab, string setv + strin cond);
   // ex string state = update + t + set + setv + where + cond + ";"
 
 private:
