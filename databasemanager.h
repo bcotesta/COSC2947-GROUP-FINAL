@@ -18,12 +18,31 @@ using namespace ::mysqlx;
 class UserInfo
 {
 public:
-  databasemanager(string t, string st); //do statement st with table t
-  
+  databasemanager(); //connect to database
+
+
+//functions
+  void addtoTable(string t, string v);
+  // (t) table to add a row to, (v) values to insert in ('value1','value2') format 
+  // or "('"+ name + "', '" + email + "')" format with variables
+
+  string getValue(string c, string t, string v); 
+  // (c)column/s to select, (t)table to select from, (v)value to select if using where 
+  // ex select + c + from + t + where + v + ";";
+
+  void updateTable(string t, string setv + strin cond);
+  // ex string state = update + t + set + setv + where + cond + ";"
 
 private:
   string statement;
   string table;
-  
+// values for easier sql queries
+  string insert = "INSERT INTO ";
+  string values = "VALUES ";
+  string update =  "UPDATE ";
+  string set = "SET ";
+  string select = "SELECT ";
+  string from = "FROM ";
+  string where = "WHERE ";
   
 };
