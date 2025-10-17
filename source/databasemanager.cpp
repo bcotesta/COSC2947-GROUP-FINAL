@@ -11,12 +11,12 @@ databasemanager::databasemanager():
 
 try {
     int tempint = 0;
-    driver = sql::mysql::get_driver_instance();
-    con = driver->connect("tcp://127.0.0.1:3306", "root", "keypick1"); 
+    driver = sql::mysql::get_driver_instance(); //driver is the driver value for commands
+    con = driver->connect("tcp://127.0.0.1:3306", "root", "keypick1");  //con is the connection value for commands 
   // connect to driver instance
   
     con->setSchema("bankdatabase"); 
-   //Database that holds all tables
+   //con is used to refer to the connection, the setSchema is the Database that holds all tables
     }
   catch (sql::SQLException &e){ //catch for errors
     std::cerr << "SQL Error: " << e.what() << std::endl;
@@ -24,6 +24,8 @@ try {
 
   void databasemanager::addtoTable(string tab, string val)
   {
+    //tab is table that will be inserted
+    //val is the value that will be inserted 
     string statement = this.insert + t + " " + this.values + val; 
     //create statement to execute
     
