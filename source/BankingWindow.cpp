@@ -229,7 +229,7 @@ void BankingWindow::onMiniStatement() {
 
 // -- onNewAccount --
 // -- Prompts for new account type and creates it, and adds to customer
-// this will later work with the database and it's controller
+// -- this will later work with the database and it's controller
 void BankingWindow::onNewAccount() {
     QStringList accountTypes;
     accountTypes << "Chequing" << "Savings" << "Credit";
@@ -277,84 +277,58 @@ void BankingWindow::setupUI() {
     
     QVBoxLayout* mainLayout = new QVBoxLayout(this);
     
-    // Welcome section
-    welcomeLabel = new QLabel();
-    welcomeLabel->setStyleSheet("font-size: 16px; font-weight: bold; color: #ffffff; margin: 10px;");
-    mainLayout->addWidget(welcomeLabel);
-    
-    // Account selection section
-    QGroupBox* accountGroup = new QGroupBox("Account Selection");
-    QHBoxLayout* accountLayout = new QHBoxLayout(accountGroup);
-    
-    accountLayout->addWidget(new QLabel("Current Account:"));
-    accountSelector = new QComboBox();
-    connect(accountSelector, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &BankingWindow::onAccountChanged);
-    accountLayout->addWidget(accountSelector);
-    
-    currentAccountLabel = new QLabel();
-    currentAccountLabel->setStyleSheet("font-weight: bold; color: #27ae60;");
-    accountLayout->addWidget(currentAccountLabel);
-    
-    balanceLabel = new QLabel();
-    balanceLabel->setStyleSheet("font-weight: bold; color: #e74c3c;");
-    accountLayout->addWidget(balanceLabel);
-    
-    mainLayout->addWidget(accountGroup);
-    
-    // Buttons section
-    QGroupBox* actionsGroup = new QGroupBox("Banking Actions");
-    QGridLayout* buttonLayout = new QGridLayout(actionsGroup);
-    
-    viewBalanceBtn = new QPushButton("View Balance");
-    connect(viewBalanceBtn, &QPushButton::clicked, this, &BankingWindow::onViewBalance);
-    buttonLayout->addWidget(viewBalanceBtn, 0, 0);
-    
-    depositBtn = new QPushButton("Deposit");
-    connect(depositBtn, &QPushButton::clicked, this, &BankingWindow::onDeposit);
-    buttonLayout->addWidget(depositBtn, 0, 1);
-    
-    withdrawBtn = new QPushButton("Withdraw");
-    connect(withdrawBtn, &QPushButton::clicked, this, &BankingWindow::onWithdraw);
-    buttonLayout->addWidget(withdrawBtn, 0, 2);
-    
-    transferBtn = new QPushButton("Transfer");
-    connect(transferBtn, &QPushButton::clicked, this, &BankingWindow::onTransfer);
-    buttonLayout->addWidget(transferBtn, 1, 0);
-    
-    viewTransactionsBtn = new QPushButton("View Transactions");
-    connect(viewTransactionsBtn, &QPushButton::clicked, this, &BankingWindow::onViewTransactions);
-    buttonLayout->addWidget(viewTransactionsBtn, 1, 1);
-    
-    miniStatementBtn = new QPushButton("Mini Statement");
-    connect(miniStatementBtn, &QPushButton::clicked, this, &BankingWindow::onMiniStatement);
-    buttonLayout->addWidget(miniStatementBtn, 1, 2);
-    
-    newAccountBtn = new QPushButton("New Account");
-    connect(newAccountBtn, &QPushButton::clicked, this, &BankingWindow::onNewAccount);
-    buttonLayout->addWidget(newAccountBtn, 2, 0);
-    
-    mainLayout->addWidget(actionsGroup);
-    
-    // Output area
-    QGroupBox* outputGroup = new QGroupBox("Transaction Output");
-    QVBoxLayout* outputLayout = new QVBoxLayout(outputGroup);
-    
-    outputArea = new QTextEdit();
-    outputArea->setReadOnly(true);
-    outputArea->setMaximumHeight(200);
-    outputLayout->addWidget(outputArea);
-    
-    mainLayout->addWidget(outputGroup);
+    // TODO
+    // - NAVIGATION BAR ON BOTTOM OF APP
+    // - HEADER WITH PROFILE ICON AND SEARCH BUTTON
+	// - ALERTS PANEL FOR NOTIFICATIONS (recent transactions, messages from bank, etc)
+	// - COLLAPSABLE ACCOUNTS LIST WITH NAME OF ACCOUNT, ID, BALANCE (total of all accounts under)
+    // - SEPARATE LIST FOR CREDIT CARDS
+
+	int currentView = 0; // 0 = home, 1 = transfers, 2 = bills, 3 = advice, 4 = more, 5 = profile 6 = settings
+
+	// -- Navigation Bar --
+	// -- Lies at the bottom of the window with navigation buttons
+	QHBoxLayout* navLayout = new QHBoxLayout();
+	mainLayout->addStretch();
+	mainLayout->addLayout(navLayout);
+
+	QPushButton* homeBtn = new QPushButton("Home");
+    homeBtn->setFixedHeight(70);
+    styleNavigationButton(homeBtn);
+    connect(homeBtn, &QPushButton::clicked, [this]() {
+        std::cout << "Home button clicked" << std::endl;
+    });
+	navLayout->addWidget(homeBtn);
+
+	QPushButton* transfersButton = new QPushButton("Transfers");
+	transfersButton->setFixedHeight(70);
+    styleNavigationButton(transfersButton);
+	navLayout->addWidget(transfersButton);
+
+	QPushButton* paymentsButton = new QPushButton("Bills");
+	paymentsButton->setFixedHeight(70);
+    styleNavigationButton(paymentsButton);
+	navLayout->addWidget(paymentsButton);
+
+	QPushButton* adviceButton = new QPushButton("Advice");
+	adviceButton->setFixedHeight(70);
+    styleNavigationButton(adviceButton);
+	navLayout->addWidget(adviceButton);
+
+	QPushButton* moreButton = new QPushButton("More");
+	moreButton->setFixedHeight(70);
+    styleNavigationButton(moreButton);
+	navLayout->addWidget(moreButton);
 }
 
 void BankingWindow::initializeData() {
     currentCustomer.setUser(currentUser);
     currentCustomer.addAccount(currentAccount);
     
-    welcomeLabel->setText(QString("Welcome, %1!").arg(QString::fromStdString(currentUser.name())));
+    //welcomeLabel->setText(QString("Welcome, %1!").arg(QString::fromStdString(currentUser.name())));
     
-    updateAccountSelector();
-    updateCurrentAccountDisplay();
+    //updateAccountSelector();
+    //updateCurrentAccountDisplay();
 }
 
 void BankingWindow::updateAccountSelector() {
@@ -379,4 +353,46 @@ void BankingWindow::updateAccountInCustomer() {
     // In a real application, this would be handled by the database layer
     currentCustomer.removeAccount(currentAccount.accountNumber());
     currentCustomer.addAccount(currentAccount);
+}
+
+// Add this helper function to your BankingWindow class (in the private section of BankingWindow.h)
+void BankingWindow::styleNavigationButton(QPushButton* button) {
+    // Detect theme automatically
+    QPalette palette = this->palette();
+    QColor windowColor = palette.color(QPalette::Window);
+    bool isDarkMode = windowColor.lightness() < 128;
+    
+    if (isDarkMode) {
+        button->setStyleSheet(
+            "QPushButton {"
+            "    border: none;"
+            "    background-color: transparent;"
+            "    color: #ffffff;"
+            "    font-size: 14px;"
+            "    font-weight: bold;"
+            "}"
+            "QPushButton:hover {"
+            "    background-color: rgba(255, 255, 255, 0.1);"
+            "}"
+            "QPushButton:pressed {"
+            "    background-color: rgba(255, 255, 255, 0.2);"
+            "}"
+        );
+    } else {
+        button->setStyleSheet(
+            "QPushButton {"
+            "    border: none;"
+            "    background-color: transparent;"
+            "    color: #333333;"
+            "    font-size: 14px;"
+            "    font-weight: bold;"
+            "}"
+            "QPushButton:hover {"
+            "    background-color: rgba(0, 0, 0, 0.1);"
+            "}"
+            "QPushButton:pressed {"
+            "    background-color: rgba(0, 0, 0, 0.2);"
+            "}"
+        );
+    }
 }

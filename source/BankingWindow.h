@@ -50,4 +50,5 @@ private:
     void updateAccountSelector();
     void updateCurrentAccountDisplay();
     void updateAccountInCustomer();
+    void styleNavigationButton(QPushButton* button);
 };
