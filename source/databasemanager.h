@@ -33,7 +33,7 @@ public:
   // (c)column/s to select, (t)table to select from, (v)value to select if using where 
   // ex select + c + from + t + where + v + ";";
 
-  void updateTable(string tab, string setv + string cond);
+  void updateTable(string tab, string setv, string cond);
   // ex string state = update + t + set + setv + where + cond + ";"
 
 private:
