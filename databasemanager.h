@@ -18,7 +18,7 @@ using namespace ::mysqlx;
 class UserInfo
 {
 public:
-  databasemanager(string t, string st) const; //do statement st with table t
+  databasemanager(string t, string st); //do statement st with table t
   
 
 private:
