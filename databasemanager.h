@@ -26,7 +26,10 @@ public:
   // (t) table to add a row to, (v) values to insert in ('value1','value2') format 
   // or "('"+ name + "', '" + email + "')" format with variables
 
-  string getValue(string c, string t, string v); 
+  string getValue(string c, string t); 
+  // select statement without where statement
+  
+  string getValueW(string c, string t, string v); 
   // (c)column/s to select, (t)table to select from, (v)value to select if using where 
   // ex select + c + from + t + where + v + ";";
 
