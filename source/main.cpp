@@ -230,5 +230,9 @@ int main(int argc, char *argv[])
     registerButton->setGeometry(110, 180, 100, 30);
     registerButton->show();
 
+    // -- DEBUGGING --
+    loginWindow.close();
+    bankingWindow->show();
+
     return app.exec();
 }

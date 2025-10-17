@@ -14,6 +14,8 @@
 #include <QInputDialog>
 #include <QMessageBox>
 
+#include <iostream>
+
 BankingWindow::BankingWindow(QWidget* parent) : QWidget(parent),
     // eventually pull this data from database
     currentUser(1, "John Doe", "jd@gmail.com", "reallygoodpassword123", "705-671-7171"),
@@ -44,16 +46,29 @@ void BankingWindow::onAccountChanged() {
 // -- onViewBalance --
 // -- Displays the current balance of the selected account
 void BankingWindow::onViewBalance() {
-    balanceLabel->setText(QString("Current Balance: $%1").arg(currentAccount.getBalance(), 0, 'f', 2));
+    balanceLabel->setText(QString("Balance: $%1").arg(currentAccount.getBalance(), 0, 'f', 2));
     outputArea->append(QString("Account balance: $%1").arg(currentAccount.getBalance(), 0, 'f', 2));
 }
 
 // -- onDeposit --
 // -- Prompts for deposit amount and updates the account
 void BankingWindow::onDeposit() {
-    bool ok;
-    double amount = QInputDialog::getDouble(this, "Deposit", "Enter deposit amount:", 0.0, 0.0, 999999.99, 2, &ok);
-    if (ok && amount > 0) {
+    bool ok = false;
+    // Dialog modal
+    QInputDialog dlg;
+	dlg.setWindowTitle("Deposit");
+	dlg.setLabelText("Enter deposit amount:");
+	dlg.setInputMode(QInputDialog::DoubleInput);
+	dlg.setDoubleRange(0.0, 999999.99);
+	dlg.setDoubleDecimals(2);
+
+    dlg.setFixedSize(200, 98);
+	dlg.setParent(this, Qt::Dialog);
+
+    ok = (dlg.exec() == QDialog::Accepted);
+    
+    if (ok && dlg.doubleValue() > 0) {
+	    double amount = dlg.doubleValue();
         currentAccount.deposit(amount);
         updateCurrentAccountDisplay();
         outputArea->append(QString("Deposited $%1 to account %2")
@@ -68,9 +83,22 @@ void BankingWindow::onDeposit() {
 // -- onWithdraw --
 // -- Prompts for withdrawal amount and updates the account
 void BankingWindow::onWithdraw() {
-    bool ok;
-    double amount = QInputDialog::getDouble(this, "Withdraw", "Enter withdrawal amount:", 0.0, 0.0, currentAccount.getBalance(), 2, &ok);
-    if (ok && amount > 0) {
+    bool ok = false;
+    // Dialog modal
+    QInputDialog dlg;
+    dlg.setWindowTitle("Withdraw");
+    dlg.setLabelText("Enter withdrawl amount:");
+    dlg.setInputMode(QInputDialog::DoubleInput);
+    dlg.setDoubleRange(0.0, currentAccount.getBalance());
+    dlg.setDoubleDecimals(2);
+
+    dlg.setFixedSize(200, 98);
+    dlg.setParent(this, Qt::Dialog);
+
+    ok = (dlg.exec() == QDialog::Accepted);
+
+    if (ok && dlg.doubleValue() > 0) {
+		double amount = dlg.doubleValue();
         if (amount <= currentAccount.getBalance()) {
             currentAccount.withdraw(amount);
             updateCurrentAccountDisplay();
@@ -92,7 +120,7 @@ void BankingWindow::onTransfer() {
     auto accountsList = currentCustomer.accounts();
 	// edge case if you dont have a second account
     if (accountsList.size() < 2) {
-        QMessageBox::information(this, "Transfer", "You need at least 2 accounts to transfer funds.");
+        QMessageBox::information(nullptr, "Transfer", "You need at least 2 accounts to transfer funds.");
         return;
     }
 
@@ -105,11 +133,40 @@ void BankingWindow::onTransfer() {
     }
 
 	// Prompt user to select destination account, and then an amount
-    bool ok;
-    QString toAccount = QInputDialog::getItem(this, "Transfer", "Select destination account:", accountNumbers, 0, false, &ok);
-    if (ok && !toAccount.isEmpty()) {
-        double amount = QInputDialog::getDouble(this, "Transfer", "Enter transfer amount:", 0.0, 0.0, currentAccount.getBalance(), 2, &ok);
-        if (ok && amount > 0) {
+	bool ok = false;
+    // Dialog modal
+    QInputDialog dlg;
+    dlg.setWindowTitle("Transfer");
+    dlg.setLabelText("Select destination account:");
+    dlg.setInputMode(QInputDialog::TextInput);      // this is unused but needs to be set to prevent errors
+	dlg.setComboBoxItems(accountNumbers);
+	dlg.setComboBoxEditable(false);
+
+	dlg.setModal(true);
+
+    dlg.setFixedSize(200, 98);
+    dlg.setParent(this, Qt::Dialog);
+
+    ok = (dlg.exec() == QDialog::Accepted);
+    
+    if (ok && !dlg.textValue().isEmpty()) {
+		QString toAccount = dlg.textValue();
+
+        // Dialog modal
+        QInputDialog dlg_i;
+        dlg_i.setWindowTitle("Transfer");
+        dlg_i.setLabelText("Enter transfer amount:");
+        dlg_i.setInputMode(QInputDialog::DoubleInput);
+        dlg_i.setDoubleRange(0.0, currentAccount.getBalance());
+        dlg_i.setDoubleDecimals(2);
+
+        dlg_i.setFixedSize(200, 98);
+        dlg_i.setParent(this, Qt::Dialog);
+
+        ok = (dlg_i.exec() == QDialog::Accepted);
+
+        if (ok && dlg_i.doubleValue() > 0) {
+			double amount = dlg_i.doubleValue();
             try {
                 currentCustomer.transferFunds(currentAccount.accountNumber(), toAccount.toStdString(), amount);
                 outputArea->append(QString("Transferred $%1 from %2 to %3")
@@ -177,9 +234,25 @@ void BankingWindow::onNewAccount() {
     QStringList accountTypes;
     accountTypes << "Chequing" << "Savings" << "Credit";
     
-    bool ok;
-    QString selectedType = QInputDialog::getItem(this, "New Account", "Select account type:", accountTypes, 0, false, &ok);
+    bool ok = false;
+    // Dialog modal
+    QInputDialog dlg;
+    dlg.setWindowTitle("New Account");
+    dlg.setLabelText("Select account type:");
+    dlg.setInputMode(QInputDialog::TextInput);      // this is unused but needs to be set to prevent errors
+    dlg.setComboBoxItems(accountTypes);
+    dlg.setComboBoxEditable(false);
+
+    dlg.setModal(true);
+
+    dlg.setFixedSize(200, 98);
+    dlg.setParent(this, Qt::Dialog);
+    
+	ok = (dlg.exec() == QDialog::Accepted);
+
     if (ok) {
+		QString selectedType = dlg.textValue();
+        
         // Generate a simple account number (in real app, this would be from database)
         QString newAccountNumber = QString::number(123456000 + currentCustomer.accounts().size() + 1);
         
@@ -199,7 +272,8 @@ void BankingWindow::onNewAccount() {
 // -- Initializes and arranges all UI components
 void BankingWindow::setupUI() {
     setWindowTitle("GSBS - Greater Sudbury Banking Service");
-    setGeometry(100, 100, 800, 600);
+	setGeometry(0, 0, 500, 800); // window is 500x800 pixels, located in the top-left corner of the monitor (0,0)
+    setMinimumSize(500,800);
     
     QVBoxLayout* mainLayout = new QVBoxLayout(this);
     
