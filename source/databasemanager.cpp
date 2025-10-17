@@ -68,7 +68,7 @@ string databasemanager::retStringW(string col, string tab, string val, string sp
   return tempstring;
 }
 
-void databasemanager::UpdateTable(string tab, string setv, string cond)
+void databasemanager::updateTable(string tab, string setv, string cond)
 {
   this.statement = this.update + tab + " " + this.set + setv + " " + this.where + cond; 
   //create statement for execution with UPDATE, SET, and WHERE
