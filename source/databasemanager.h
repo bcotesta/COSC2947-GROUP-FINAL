@@ -15,7 +15,7 @@ using ::std::endl;
 using namespace ::mysqlx;
 
 
-class UserInfo
+class databasemanager
 {
 public:
   databasemanager(); //connect to database
