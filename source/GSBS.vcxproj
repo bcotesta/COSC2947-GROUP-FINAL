@@ -63,6 +63,15 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\mysql-connector-c++-9.4.0-winx64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>D:\mysql-connector-c++-9.4.0-winx64\lib64\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -97,6 +106,7 @@
     <ClCompile Include="BankingWindow.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="Customer.cpp" />
+    <ClCompile Include="databasemanager.cpp" />
     <ClCompile Include="main.cpp">
       <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
       <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
@@ -113,6 +123,7 @@
     <QtMoc Include="BankingWindow.h" />
     <ClInclude Include="Card.h" />
     <ClInclude Include="Customer.h" />
+    <ClInclude Include="databasemanager.h" />
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="Types.h" />
     <ClInclude Include="User.h" />
