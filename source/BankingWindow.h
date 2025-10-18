@@ -8,6 +8,9 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QTextEdit>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QStackedWidget>
 
 class BankingWindow : public QWidget {
     Q_OBJECT
@@ -16,6 +19,20 @@ private:
     User currentUser;
     Customer currentCustomer;
     Account currentAccount;
+    
+    // UI Layout Elements
+    QVBoxLayout* mainLayout;
+    QStackedWidget* contentStack;
+    QHBoxLayout* navLayout;
+    QHBoxLayout* tbLayout;
+    
+    // View Widgets
+    QWidget* homeView;
+    QWidget* transfersView;
+    QWidget* billsView;
+    QWidget* adviceView;
+    QWidget* moreView;
+    QWidget* profileView;
     
     // UI Elements
     QLabel* welcomeLabel;
@@ -46,9 +63,14 @@ private slots:
 
 private:
     void setupUI();
+    void setupViews();
     void initializeData();
     void updateAccountSelector();
     void updateCurrentAccountDisplay();
     void updateAccountInCustomer();
     void styleNavigationButton(QPushButton* button);
+
+    // For the navbar / view switching
+    void setCurrentView(int index);
+    int currentViewIndex;
 };

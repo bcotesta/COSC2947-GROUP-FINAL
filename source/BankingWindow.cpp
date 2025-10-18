@@ -272,90 +272,206 @@ void BankingWindow::onNewAccount() {
 // -- Initializes and arranges all UI components
 void BankingWindow::setupUI() {
     setWindowTitle("GSBS - Greater Sudbury Banking Service");
-	setGeometry(0, 0, 500, 800); // window is 500x800 pixels, located in the top-left corner of the monitor (0,0)
-    setMinimumSize(500,800);
+    setGeometry(0, 0, 500, 800);
+    setMinimumSize(500, 800);
     
-    QVBoxLayout* mainLayout = new QVBoxLayout(this);
+    // Create main layout and store reference
+    mainLayout = new QVBoxLayout(this);
     
-    // TODO
-    // - NAVIGATION BAR ON BOTTOM OF APP
-    // - HEADER WITH PROFILE ICON AND SEARCH BUTTON
-	// - ALERTS PANEL FOR NOTIFICATIONS (recent transactions, messages from bank, etc)
-	// - COLLAPSABLE ACCOUNTS LIST WITH NAME OF ACCOUNT, ID, BALANCE (total of all accounts under)
-    // - SEPARATE LIST FOR CREDIT CARDS
+#pragma region <Top of screen bar>
 
-	int currentView = 0; // 0 = home, 1 = transfers, 2 = bills, 3 = advice, 4 = more, 5 = profile 6 = settings
+	// Create top of screen toolbar'
+	tbLayout = new QHBoxLayout();
+	mainLayout->addLayout(tbLayout);
+    
+	// app title label
+	QLabel* titleLabel = new QLabel("GSBS");
+	titleLabel->setStyleSheet("font-weight: bold; font-size: 24px;");
+	tbLayout->addWidget(titleLabel);
 
-	// -- Navigation Bar --
-	// -- Lies at the bottom of the window with navigation buttons
-	QHBoxLayout* navLayout = new QHBoxLayout();
-	mainLayout->addStretch();
-	mainLayout->addLayout(navLayout);
+    // profile button
+	QPushButton* profileBtn = new QPushButton("Profile");
+	profileBtn->setFixedHeight(40);
+	profileBtn->setFixedWidth(60);
+	styleNavigationButton(profileBtn);
+	connect(profileBtn, &QPushButton::clicked, [this]() {
+		setCurrentView(5); // Profile view index
+    });
+	tbLayout->addWidget(profileBtn);
 
-	QPushButton* homeBtn = new QPushButton("Home");
+#pragma endregion
+    
+    // Create stacked widget for view switching
+    contentStack = new QStackedWidget();
+    mainLayout->addWidget(contentStack);
+    
+    // Setup individual views
+    setupViews();
+    
+
+    // Create navigation bar
+    navLayout = new QHBoxLayout();
+    mainLayout->addLayout(navLayout);
+    
+    QPushButton* homeBtn = new QPushButton("Home");
     homeBtn->setFixedHeight(70);
     styleNavigationButton(homeBtn);
     connect(homeBtn, &QPushButton::clicked, [this]() {
-        std::cout << "Home button clicked" << std::endl;
+        setCurrentView(0);
     });
-	navLayout->addWidget(homeBtn);
+    navLayout->addWidget(homeBtn);
 
-	QPushButton* transfersButton = new QPushButton("Transfers");
-	transfersButton->setFixedHeight(70);
+    QPushButton* transfersButton = new QPushButton("Transfers");
+    transfersButton->setFixedHeight(70);
     styleNavigationButton(transfersButton);
-	navLayout->addWidget(transfersButton);
+    connect(transfersButton, &QPushButton::clicked, [this]() {
+        setCurrentView(1);
+    });
+    navLayout->addWidget(transfersButton);
 
-	QPushButton* paymentsButton = new QPushButton("Bills");
-	paymentsButton->setFixedHeight(70);
+    QPushButton* paymentsButton = new QPushButton("Bills");
+    paymentsButton->setFixedHeight(70);
     styleNavigationButton(paymentsButton);
-	navLayout->addWidget(paymentsButton);
+    connect(paymentsButton, &QPushButton::clicked, [this]() {
+        setCurrentView(2);
+    });
+    navLayout->addWidget(paymentsButton);
 
-	QPushButton* adviceButton = new QPushButton("Advice");
-	adviceButton->setFixedHeight(70);
+    QPushButton* adviceButton = new QPushButton("Advice");
+    adviceButton->setFixedHeight(70);
     styleNavigationButton(adviceButton);
-	navLayout->addWidget(adviceButton);
+    connect(adviceButton, &QPushButton::clicked, [this]() {
+        setCurrentView(3);
+    });
+    navLayout->addWidget(adviceButton);
 
-	QPushButton* moreButton = new QPushButton("More");
-	moreButton->setFixedHeight(70);
+    QPushButton* moreButton = new QPushButton("More");
+    moreButton->setFixedHeight(70);
     styleNavigationButton(moreButton);
-	navLayout->addWidget(moreButton);
+    connect(moreButton, &QPushButton::clicked, [this]() {
+        setCurrentView(4);
+    });
+    navLayout->addWidget(moreButton);
+    
+    // Set initial view
+    currentViewIndex = 0;
+    setCurrentView(0);
 }
 
-void BankingWindow::initializeData() {
-    currentCustomer.setUser(currentUser);
-    currentCustomer.addAccount(currentAccount);
+// New method to setup individual views
+void BankingWindow::setupViews() {
+#pragma region <Home View>
+    homeView = new QWidget();
+    QVBoxLayout* homeLayout = new QVBoxLayout(homeView);
     
-    //welcomeLabel->setText(QString("Welcome, %1!").arg(QString::fromStdString(currentUser.name())));
+    welcomeLabel = new QLabel("Welcome!");
+    currentAccountLabel = new QLabel("Account: ");
+    balanceLabel = new QLabel("Balance: $0.00");
+    accountSelector = new QComboBox();
     
-    //updateAccountSelector();
-    //updateCurrentAccountDisplay();
+    homeLayout->addWidget(welcomeLabel);
+    homeLayout->addWidget(currentAccountLabel);
+    homeLayout->addWidget(balanceLabel);
+    homeLayout->addWidget(accountSelector);
+    
+    viewBalanceBtn = new QPushButton("View Balance");
+    depositBtn = new QPushButton("Deposit");
+    withdrawBtn = new QPushButton("Withdraw");
+    transferBtn = new QPushButton("Transfer");
+    
+    homeLayout->addWidget(viewBalanceBtn);
+    homeLayout->addWidget(depositBtn);
+    homeLayout->addWidget(withdrawBtn);
+    homeLayout->addWidget(transferBtn);
+    
+    outputArea = new QTextEdit();
+    homeLayout->addWidget(outputArea);
+    
+    // Connect signals
+    connect(accountSelector, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &BankingWindow::onAccountChanged);
+    connect(viewBalanceBtn, &QPushButton::clicked, this, &BankingWindow::onViewBalance);
+    connect(depositBtn, &QPushButton::clicked, this, &BankingWindow::onDeposit);
+    connect(withdrawBtn, &QPushButton::clicked, this, &BankingWindow::onWithdraw);
+    connect(transferBtn, &QPushButton::clicked, this, &BankingWindow::onTransfer);
+    
+    contentStack->addWidget(homeView);
+#pragma endregion
+    
+#pragma region <Transfers View>
+    transfersView = new QWidget();
+    QVBoxLayout* transfersLayout = new QVBoxLayout(transfersView);
+    transfersLayout->addWidget(new QLabel("Transfers View"));
+    transfersLayout->addWidget(new QLabel("Transfer functionality will go here"));
+    contentStack->addWidget(transfersView);
+#pragma endregion
+
+#pragma region <Bills View>
+    billsView = new QWidget();
+    QVBoxLayout* billsLayout = new QVBoxLayout(billsView);
+    billsLayout->addWidget(new QLabel("Bills View"));
+    billsLayout->addWidget(new QLabel("Bill payment functionality will go here"));
+    contentStack->addWidget(billsView);
+#pragma endregion
+
+#pragma region <Advice View>
+    adviceView = new QWidget();
+    QVBoxLayout* adviceLayout = new QVBoxLayout(adviceView);
+    adviceLayout->addWidget(new QLabel("Financial Advice View"));
+    adviceLayout->addWidget(new QLabel("Financial advice content will go here"));
+    contentStack->addWidget(adviceView);
+#pragma endregion
+
+#pragma region <More View>
+    moreView = new QWidget();
+    QVBoxLayout* moreLayout = new QVBoxLayout(moreView);
+    moreLayout->addWidget(new QLabel("More Options View"));
+    moreLayout->addWidget(new QLabel("Additional features will go here"));
+    contentStack->addWidget(moreView);
+#pragma endregion
+
+#pragma region <Profile View>
+    profileView = new QWidget();
+    QVBoxLayout* profileLayout = new QVBoxLayout(profileView);
+    profileLayout->addWidget(new QLabel("Profile View"));
+    profileLayout->addWidget(new QLabel("Additional features will go here"));
+    contentStack->addWidget(profileView);
+#pragma endregion
 }
 
-void BankingWindow::updateAccountSelector() {
-    accountSelector->clear();
-    auto accountsList = currentCustomer.accounts();
-    for (const auto& account : accountsList) {
-        QString accountDisplay = QString("%1 (%2)")
-            .arg(QString::fromStdString(account.accountNumber()))
-            .arg(account.accountType() == AccountType::CHEQUING ? "Chequing" : 
-                 account.accountType() == AccountType::SAVINGS ? "Savings" : "Credit");
-        accountSelector->addItem(accountDisplay, QString::fromStdString(account.accountNumber()));
+void BankingWindow::setCurrentView(int index) {
+    if (index >= 0 && index < contentStack->count()) {
+        contentStack->setCurrentIndex(index);
+        currentViewIndex = index;
+        
+        std::cout << "Switched to view: " << index << std::endl;
+        
+        switch (index) {
+            case 0:
+                std::cout << "Showing home view" << std::endl;
+                break;
+            case 1:
+                std::cout << "Showing transfers view" << std::endl;
+                break;
+            case 2:
+                std::cout << "Showing bills view" << std::endl;
+                break;
+            case 3:
+                std::cout << "Showing advice view" << std::endl;
+                break;
+            case 4:
+                std::cout << "Showing more view" << std::endl;
+                break;
+            case 5:
+                std::cout << "Showing profile view" << std::endl;
+				break;
+            default:
+                break;
+        }
     }
 }
 
-void BankingWindow::updateCurrentAccountDisplay() {
-    currentAccountLabel->setText(QString("Account: %1").arg(QString::fromStdString(currentAccount.accountNumber())));
-    balanceLabel->setText(QString("Balance: $%1").arg(currentAccount.getBalance(), 0, 'f', 2));
-}
 
-void BankingWindow::updateAccountInCustomer() {
-    // This is a workaround since we can't directly update the account in the customer's list
-    // In a real application, this would be handled by the database layer
-    currentCustomer.removeAccount(currentAccount.accountNumber());
-    currentCustomer.addAccount(currentAccount);
-}
-
-// Add this helper function to your BankingWindow class (in the private section of BankingWindow.h)
+// -- sets the color scheme of the buttons depending on the system theme
 void BankingWindow::styleNavigationButton(QPushButton* button) {
     // Detect theme automatically
     QPalette palette = this->palette();
@@ -394,5 +510,63 @@ void BankingWindow::styleNavigationButton(QPushButton* button) {
             "    background-color: rgba(0, 0, 0, 0.2);"
             "}"
         );
+    }
+}
+
+void BankingWindow::initializeData() {
+    currentCustomer.setUser(currentUser);
+    currentCustomer.addAccount(currentAccount);
+    
+    //welcomeLabel->setText(QString("Welcome, %1!").arg(QString::fromStdString(currentUser.name())));
+    
+    //updateAccountSelector();
+    //updateCurrentAccountDisplay();
+}
+
+void BankingWindow::updateAccountSelector() {
+    accountSelector->clear();
+    auto accountsList = currentCustomer.accounts();
+    for (const auto& account : accountsList) {
+        QString accountDisplay = QString("%1 (%2)")
+            .arg(QString::fromStdString(account.accountNumber()))
+            .arg(account.accountType() == AccountType::CHEQUING ? "Chequing" : 
+                 account.accountType() == AccountType::SAVINGS ? "Savings" : "Credit");
+        accountSelector->addItem(accountDisplay, QString::fromStdString(account.accountNumber()));
+    }
+}
+
+void BankingWindow::updateCurrentAccountDisplay() {
+    currentAccountLabel->setText(QString("Account: %1").arg(QString::fromStdString(currentAccount.accountNumber())));
+    balanceLabel->setText(QString("Balance: $%1").arg(currentAccount.getBalance(), 0, 'f', 2));
+}
+
+void BankingWindow::updateAccountInCustomer() {
+    // This is a workaround since we can't directly update the account in the customer's list
+    // In a real application, this would be handled by the database layer
+    currentCustomer.removeAccount(currentAccount.accountNumber());
+    currentCustomer.addAccount(currentAccount);
+}
+
+// -- setCurrentView --
+// switches the main view based on the index (for navbar)
+void setCurrentView(int index) {
+    switch (index) {
+        case 0:
+            // Show home view
+			break;
+        case 1:
+		    // Show transfers view
+			break;
+        case 2:
+            // Show bills view
+            break;
+        case 3:
+            // Show advice view
+            break;
+        case 4:
+            // Show more view
+            break;
+        default:
+			break;
     }
 }
