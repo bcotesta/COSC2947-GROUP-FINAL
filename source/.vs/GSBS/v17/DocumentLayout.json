@@ -1,197 +1,170 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\",
+  "WorkspaceRootPath": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\",
   "Documents": [
     {
-<<<<<<< HEAD
-=======
-      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\databasemanager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:databasemanager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\databasemanager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:databasemanager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
->>>>>>> Database/refactor-added-missing-type-identifiers-and-class-naming-problems-syntax/BrandonCotesta-0456970
-      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\BankingWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:BankingWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\BankingWindow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\BankingWindow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:BankingWindow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\BankingWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:BankingWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\databasemanager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:databasemanager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\databasemanager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:databasemanager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Authenticator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:Authenticator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\User.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\User.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:User.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\Customer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Customer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F8CDB4E5-B868-4536-B9A5-E58B89C00AD3}|GSBS.vcxproj|solutionrelative:Customer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 1,
+      "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-<<<<<<< HEAD
           "DockedWidth": 222,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-=======
-          "DockedHeight": 317,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "databasemanager.cpp",
-              "DocumentMoniker": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\databasemanager.cpp",
-              "RelativeDocumentMoniker": "databasemanager.cpp",
-              "ToolTip": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\databasemanager.cpp",
-              "RelativeToolTip": "databasemanager.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-17T20:30:44.73Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "databasemanager.h",
-              "DocumentMoniker": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\databasemanager.h",
+              "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\databasemanager.h",
               "RelativeDocumentMoniker": "databasemanager.h",
-              "ToolTip": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\databasemanager.h",
+              "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\databasemanager.h",
               "RelativeToolTip": "databasemanager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwCIAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-17T20:30:38.312Z",
+              "WhenOpened": "2025-10-22T22:23:06.458Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
->>>>>>> Database/refactor-added-missing-type-identifiers-and-class-naming-problems-syntax/BrandonCotesta-0456970
-              "Title": "BankingWindow.cpp",
-              "DocumentMoniker": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\BankingWindow.cpp",
-              "RelativeDocumentMoniker": "BankingWindow.cpp",
-              "ToolTip": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\BankingWindow.cpp",
-              "RelativeToolTip": "BankingWindow.cpp",
-<<<<<<< HEAD
-              "ViewState": "AgIAAFwBAAAAAAAAAAAiwGsBAAAEAAAAAAAAAA==",
-=======
-              "ViewState": "AgIAAPkAAAAAAAAAAAAiwBwBAAAAAAAAAAAAAA==",
->>>>>>> Database/refactor-added-missing-type-identifiers-and-class-naming-problems-syntax/BrandonCotesta-0456970
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-16T14:59:42.414Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 1,
-              "Title": "BankingWindow.h",
-              "DocumentMoniker": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\BankingWindow.h",
-              "RelativeDocumentMoniker": "BankingWindow.h",
-              "ToolTip": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\BankingWindow.h",
-              "RelativeToolTip": "BankingWindow.h",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAADQAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-16T14:59:24.417Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "main.cpp",
-              "DocumentMoniker": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\main.cpp",
-              "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\main.cpp",
-              "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAMAAAAAAAAAAAAAAAOgAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-07T00:26:52.181Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "User.cpp",
-              "DocumentMoniker": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\User.cpp",
-              "RelativeDocumentMoniker": "User.cpp",
-              "ToolTip": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\User.cpp",
-              "RelativeToolTip": "User.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "Title": "databasemanager.cpp",
+              "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\databasemanager.cpp",
+              "RelativeDocumentMoniker": "databasemanager.cpp",
+              "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\databasemanager.cpp",
+              "RelativeToolTip": "databasemanager.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-16T15:24:23.93Z"
-=======
-              "DocumentIndex": 3,
-              "Title": "BankingWindow.h",
-              "DocumentMoniker": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\BankingWindow.h",
-              "RelativeDocumentMoniker": "BankingWindow.h",
-              "ToolTip": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\BankingWindow.h",
-              "RelativeToolTip": "BankingWindow.h",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-16T14:59:24.417Z"
->>>>>>> Database/refactor-added-missing-type-identifiers-and-class-naming-problems-syntax/BrandonCotesta-0456970
+              "WhenOpened": "2025-10-22T22:23:03.892Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "main.cpp",
-              "DocumentMoniker": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\main.cpp",
-              "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\main.cpp",
-              "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAMAAAAAAAAAAAAAAAOgAAAAWAAAAAAAAAA==",
+              "Title": "Authenticator.cpp",
+              "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Authenticator.cpp",
+              "RelativeDocumentMoniker": "Authenticator.cpp",
+              "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Authenticator.cpp",
+              "RelativeToolTip": "Authenticator.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-07T00:26:52.181Z"
+              "WhenOpened": "2025-10-22T21:16:26.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BankingWindow.cpp",
+              "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\BankingWindow.cpp",
+              "RelativeDocumentMoniker": "BankingWindow.cpp",
+              "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\BankingWindow.cpp",
+              "RelativeToolTip": "BankingWindow.cpp",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-22T20:39:16.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BankingWindow.h",
+              "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\BankingWindow.h",
+              "RelativeDocumentMoniker": "BankingWindow.h",
+              "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\BankingWindow.h",
+              "RelativeToolTip": "BankingWindow.h",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-22T20:39:17.618Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "User.cpp",
-              "DocumentMoniker": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\User.cpp",
-              "RelativeDocumentMoniker": "User.cpp",
-              "ToolTip": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\User.cpp",
-              "RelativeToolTip": "User.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAOgAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-16T15:24:23.93Z"
+              "WhenOpened": "2025-10-22T20:39:17.627Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Customer.cpp",
-              "DocumentMoniker": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\Customer.cpp",
-              "RelativeDocumentMoniker": "Customer.cpp",
-              "ToolTip": "D:\\COSC2947 Final\\COSC2947-GROUP-FINAL\\COSC2947-GROUP-FINAL\\source\\Customer.cpp",
-              "RelativeToolTip": "Customer.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAFoAAAACAAAAAAAAAA==",
+              "Title": "User.cpp",
+              "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\User.cpp",
+              "RelativeDocumentMoniker": "User.cpp",
+              "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\User.cpp",
+              "RelativeToolTip": "User.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-10T00:54:05.964Z"
-<<<<<<< HEAD
-=======
+              "WhenOpened": "2025-10-22T20:39:17.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Customer.cpp",
+              "DocumentMoniker": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Customer.cpp",
+              "RelativeDocumentMoniker": "Customer.cpp",
+              "ToolTip": "D:\\C\u002B\u002B Programming\\COSC2947-GROUP-FINAL\\source\\Customer.cpp",
+              "RelativeToolTip": "Customer.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-22T20:39:17.631Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedHeight": 83,
+          "DockedWidth": 178,
           "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{be4d7042-ba3f-11d2-840e-00c04f9902c1}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
->>>>>>> Database/refactor-added-missing-type-identifiers-and-class-naming-problems-syntax/BrandonCotesta-0456970
             }
           ]
         }

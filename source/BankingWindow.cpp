@@ -13,6 +13,7 @@
 #include <QGroupBox>
 #include <QInputDialog>
 #include <QMessageBox>
+#include <QScrollArea>
 
 #include <iostream>
 
@@ -364,6 +365,17 @@ void BankingWindow::setupViews() {
     homeView = new QWidget();
     QVBoxLayout* homeLayout = new QVBoxLayout(homeView);
     
+    // Alerts / News BOX
+	QGroupBox* alertsBox = new QGroupBox("Alerts / News");
+	QHBoxLayout* alertsLayout = new QHBoxLayout();
+
+	QLabel* alertsLabel = new QLabel("No new alerts");
+    
+	alertsLayout->addWidget(alertsLabel);
+	alertsBox->setLayout(alertsLayout);
+
+	homeLayout->addWidget(alertsBox);
+
     welcomeLabel = new QLabel("Welcome!");
     currentAccountLabel = new QLabel("Account: ");
     balanceLabel = new QLabel("Balance: $0.00");
@@ -373,6 +385,54 @@ void BankingWindow::setupViews() {
     homeLayout->addWidget(currentAccountLabel);
     homeLayout->addWidget(balanceLabel);
     homeLayout->addWidget(accountSelector);
+
+    // Accounts dropdown section
+    QGroupBox* accountsBox = new QGroupBox("Accounts");
+    accountsBox->setCheckable(true);
+    accountsBox->setChecked(false); // Start collapsed
+    QVBoxLayout* accountsBoxLayout = new QVBoxLayout();
+
+    // Create scroll area for accounts list
+    QScrollArea* accountsScrollArea = new QScrollArea();
+    accountsScrollArea->setWidgetResizable(true);
+    accountsScrollArea->setMaximumHeight(200);
+
+    QWidget* accountsContainer = new QWidget();
+    QVBoxLayout* accountsContainerLayout = new QVBoxLayout(accountsContainer);
+
+    // Populate with current customer's accounts
+    auto accountsList = currentCustomer.accounts();
+    for (const auto& account : accountsList) {
+        QHBoxLayout* accountItemLayout = new QHBoxLayout();
+
+        QString accountTypeStr;
+        switch (account.accountType()) {
+        case AccountType::CHEQUING:
+            accountTypeStr = "Chequing";
+            break;
+        case AccountType::SAVINGS:
+            accountTypeStr = "Savings";
+            break;
+        case AccountType::CREDIT:
+            accountTypeStr = "Credit";
+            break;
+        }
+
+        QLabel* accountLabel = new QLabel(QString("%1 - %2: $%3")
+            .arg(accountTypeStr)
+            .arg(QString::fromStdString(account.accountNumber()))
+            .arg(account.getBalance(), 0, 'f', 2));
+
+        accountItemLayout->addWidget(accountLabel);
+        accountsContainerLayout->addLayout(accountItemLayout);
+    }
+
+    accountsContainerLayout->addStretch();
+    accountsScrollArea->setWidget(accountsContainer);
+    accountsBoxLayout->addWidget(accountsScrollArea);
+    accountsBox->setLayout(accountsBoxLayout);
+
+    homeLayout->addWidget(accountsBox);
     
     viewBalanceBtn = new QPushButton("View Balance");
     depositBtn = new QPushButton("Deposit");
@@ -383,9 +443,10 @@ void BankingWindow::setupViews() {
     homeLayout->addWidget(depositBtn);
     homeLayout->addWidget(withdrawBtn);
     homeLayout->addWidget(transferBtn);
-    
+
     outputArea = new QTextEdit();
     homeLayout->addWidget(outputArea);
+    
     
     // Connect signals
     connect(accountSelector, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &BankingWindow::onAccountChanged);
